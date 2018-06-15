@@ -1,0 +1,347 @@
+html,body {
+    margin:0;
+    padding:0;
+    box-sizing: content-box;
+    height:100%;
+    width:100%;
+    font-family:"Microsoft Yahei",'Avenir', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    // min-width: 1365px;
+}
+input, textarea, keygen, select, button {
+font-family: "Microsoft Yahei", 'Avenir', Helvetica, Arial, sans-serif;
+}
+.t18 {
+    font-size: 18px;
+}
+.t16 {
+    font-size: 16px;
+}
+.t14 {
+    font-size: 14px;
+}
+.t12{
+    font-size: 12px;
+}
+h1,h2,h3,h4,h5,h6,p,span {
+    line-height: 1.46;
+    margin:0;
+}
+
+.btn-group {
+    @include mb();
+    button:nth-child(1){
+    margin-left: 0;
+    }
+}
+.btn-default {
+    @include sf-btn(#656565,$pr ,#fff );
+    &:hover {
+        color:$pr;
+        border-color: $pr;
+    }
+}
+.btn-primary {
+    @include sf-btn(#fff,$pr ,$pr );
+    &:hover {
+        background-color:$prs;
+        border-color: $prs;
+    }
+}
+.btn-blue {
+    @include sf-btn(#fff, $blue ,$blue);
+    @include sf-hover(#20a2ff);
+}
+a {
+    text-decoration: none;
+}
+.sf-table-top,
+.sf-panel {
+    a {
+        &:link,
+        &:visited,
+        &:hover,
+        &:active {
+            color: $pr;
+        }
+    }
+}
+
+.btn-red {
+    @include sf-btn($red, $red ,#fff);
+    // @include sf-hover(#ea4d3d);
+}
+.btn-dis {
+    @include sf-btn(#656565, $border-color,#dedede);
+}
+.btn-lg {
+    padding: 8.5px 20px;
+}
+.btn-sm {
+    padding: 6.5px 20px;
+}
+.btn-tiny {
+    padding: 3px 10px;
+    font-size: 10px;
+}
+#app {
+    height: 100%;
+    width: 100%;
+    min-width: 1366px;
+    // min-height: 700px;
+}
+/* 头部*/ 
+header.sf-top{
+    position: absolute;
+    left:200px;
+    right: 0;
+    min-width: 1165px;
+    top: 0;
+    background-color: $pr;
+    text-align: left;
+    color: white;
+    z-index: 1000;
+    &.fixed{
+        left: 64px;
+        min-width: 1301px;
+    }
+    .title {
+        line-height: 50px;
+        .fa{
+            font-size: 22px;
+            padding: 0 10px;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+    }
+    .path {
+        background: #fff;
+        border: 1px solid $border;
+        color: #999;
+        padding:10px;
+        .fa-home {
+            font-size: 30px;
+            margin-left: 3px;
+        }
+    }
+    .logout {
+        line-height: 50px;
+        text-align: right;
+        i {
+            margin: 0 18px;
+        }
+    }
+}
+section.content{
+    padding-top: 100px;
+    height: 100%;
+    margin-left: 200px;
+    background: #F0F2F5;
+    box-sizing: border-box;
+    &.fixed{
+        margin-left: 64px;
+        min-width: 1301px;
+    }
+    .sf-content {
+        height: 100%;
+        overflow-y: auto;
+        box-sizing: border-box;
+        > .main{
+            padding:20px;
+        }
+    }
+}
+/* 侧边栏 */
+.left-menu {
+    position: absolute;
+    height: 100%;
+    top:0;
+    left:0;
+    overflow-y:auto;
+    overflow-x:hidden;
+    // bottom:0;
+    // min-height: 600px;
+    &.fixed{
+        overflow: visible
+    }
+    z-index: 1001;
+    background-color:#464C5B;
+    i.fa {
+        vertical-align: middle;
+        margin-right: 5px;
+        width: 24px;
+        text-align: center;
+        font-size: 18px;
+    }
+    .el-menu {
+        transition: none;
+        // height: 100%;
+        // overflow-y: auto;
+        border-radius: 0;
+        border:none;
+        img{
+            width: 100%;
+        }
+        .el-menu-item{
+            z-index: 4000;
+        }
+    }
+}
+/* sf-panel */
+.sf-panel {
+    margin: 0 auto 18px;
+    background-color: #fff;
+    border: 1px solid $border-color;
+    border-radius: $border-radius;
+    .panel-heading {
+        padding: 10px 15px;
+        border-bottom: 1px solid #f5f5f5;
+        border-top-left-radius: $border-radius;
+        border-top-right-radius: $border-radius;
+        // color: #fff;
+        // background-color: $blue;
+    }
+    .panel-body {
+    padding: 15px;
+    }
+    h1, h2, h3, h4, h5, h6, p {
+        margin-bottom: 10px;
+    }
+}
+/* 改写element ui 样式 */
+.el-message-box{
+    padding: 20px;
+    width: 210px;
+    .el-message-box__headerbtn {
+        display: none;
+    }
+}
+.el-dialog {
+    border-radius: $border-radius;
+    .el-dialog__header{
+        border-bottom: 1px solid $border-color;
+        padding: 15px 20px 10px;
+        // .el-dialog__headerbtn .el-dialog__close {
+        //     color: white;
+        //     border: 1px solid white;
+        //     padding: 5px;
+        //     border-radius: 20px;
+        // }
+        border-top-left-radius: $border-radius;
+        border-top-right-radius: $border-radius;
+        .el-dialog__title{
+            font-size: 16px;
+        }
+    }
+    .el-dialog__footer {
+        border-top: 1px solid $border;
+    }
+}
+.el-dialog__wrapper.sf-form {
+    .el-dialog {
+        width: 1000px;
+        .el-input {
+            width: 300px;
+        }
+    }
+}
+.el-form-item__content {
+    line-height: 36px;
+    .el-range-input {
+        line-height: 36px;
+    }
+}
+::-webkit-scrollbar {
+    width: 3px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+/* 滚动条的滑轨背景颜色 */
+
+::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+/* 滑块颜色 */
+
+::-webkit-scrollbar-button {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+/* 滑轨两头的监听按钮颜色 */
+
+::-webkit-scrollbar-corner {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+.el-form-item__label {
+    line-height: 36px;
+}
+.el-input__inner {
+    height: 36px;
+    border-color: $border;
+    line-height: 36px;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+transition: opacity .5s ease;
+}
+
+.fade-enter,
+.fade-leave-active {
+opacity: 0
+}
+
+.child-view {
+position: absolute;
+transition: all .5s cubic-bezier(.55, 0, .1, 1);
+}
+
+.slide-left-enter,
+.slide-right-leave-active {
+opacity: 0;
+-webkit-transform: translate(30px, 0);
+transform: translate(30px, 0);
+}
+
+.slide-left-leave-active,
+.slide-right-enter {
+opacity: 0;
+-webkit-transform: translate(-30px, 0);
+transform: translate(-30px, 0);
+}
+/**/
+.info {
+  background: #E6F7FF;
+  padding: 10px 0;
+  margin-bottom: 18px;
+  border: 1px solid #CFEEFD;
+  span{
+    padding: 20px 30px;
+    .text {
+      display: inline-block;
+      padding: 0px 5px;
+      color:#1890FF;
+    }
+  }
+  span:last-child{
+    color:#1890FF;
+    cursor: pointer;
+  }
+}
+p.c-list {
+    button.btn-blue {
+        padding: 1px 10px;
+        margin: 0;
+        margin-left: 30px;
+    }
+    .fa {
+        font-size: 20px;
+        cursor: pointer;
+        float: right;
+        line-height: 26px;
+    }
+
+}
