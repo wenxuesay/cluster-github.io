@@ -1,0 +1,40 @@
+$prs:#44AFDD;
+$ses:#53C5AC;
+$pr:#20a0ff;
+$se:#111f2a;
+$orange: #ff7e00;
+$blue:#3aaafc;
+$red: #fe5140;
+$font-color: #656565;
+$border-color: #d6d6d6;
+$border: #dcdcdc;
+$border-radius: 4px;
+@mixin mb {
+    margin-bottom: 18px;
+}
+
+@mixin sf-btn($color, $border-color, $backgroundColor) {
+    padding: 7.5px 20px;
+    margin: 0 5px;
+    color: $color;
+    font-size: 14px;
+    border: 1px solid $border-color;
+    background-color: $backgroundColor;
+    border-radius: 4px;
+    outline: none;
+    cursor: pointer;
+    &.first {
+        margin-left: 0px;
+    }
+}
+
+@mixin sf-hover($color) {
+    &:hover {
+        border-color: $color;
+        background-color: $color;
+    }
+}
+
+// $fa-font-path:'../../src/assets/css/fonts';
+// @import "../../node_modules/font-awesome/scss/font-awesome.scss";
+// @import '../../node_modules/element-ui/packages/theme-chalk/src/index';
